@@ -102,6 +102,9 @@ gem "canonical-rails"
 # Used to generate logstash friendly log files
 gem "logstasher"
 
+# Pry for rails console
+gem "pry-rails"
+
 # Gems useful for development
 group :development do
   gem "listen"
