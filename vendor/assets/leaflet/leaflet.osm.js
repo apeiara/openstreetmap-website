@@ -2,7 +2,7 @@ L.OSM = {};
 
 L.OSM.TileLayer = L.TileLayer.extend({
   options: {
-    url: 'http://ats.apeiara.com/{z}/{x}/{y}.png',
+    url: 'http://ats-uk.apeiara.com/{z}/{x}/{y}.png',
     attribution: '© <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
   },
 

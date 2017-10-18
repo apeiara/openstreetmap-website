@@ -14,7 +14,7 @@ OpenLayers.Layer.OSM.Mapnik = OpenLayers.Class(OpenLayers.Layer.OSM, {
      */
     initialize: function(name, options) {
         var url = [
-            "http://ats.apeiara.com/${z}/${x}/${y}.png"
+            "http://ats-uk.apeiara.com/${z}/${x}/${y}.png"
         ];
         options = OpenLayers.Util.extend({
             numZoomLevels: 20,
