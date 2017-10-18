@@ -1867,6 +1867,9 @@ pt-BR:
         aol:
           title: Entrar com a AOL
           alt: Entrar com um OpenID da AOL
+        alm:
+          title: Entrar com o ALM
+          alt: Entrar com conta do ALM
     logout:
       title: Sair
       heading: Sair do OpenStreetMap

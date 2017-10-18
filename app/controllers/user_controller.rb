@@ -511,6 +511,8 @@ class UserController < ApplicationController
                        uid.match(%r{https://me.yahoo.com/(.*)})
     when "google", "facebook"
       email_verified = true
+    when "alm_spdl", "alm_staging", "alm_uk"
+      email_verified = true
     else
       email_verified = false
     end
@@ -540,6 +542,22 @@ class UserController < ApplicationController
         openid_url = auth_info[:extra][:id_info]["openid_id"]
         user = User.find_by(:auth_provider => "openid", :auth_uid => openid_url) if openid_url
         user.update(:auth_provider => provider, :auth_uid => uid) if user
+      end
+
+      if user.nil? && ["alm_spdl", "alm_staging", "alm_uk"].include?(provider.to_s)
+        pass = SecureRandom.base64(16)
+        user = User.create({
+          email: email,
+          auth_provider: provider,
+          auth_uid: uid,
+          display_name: name,
+          status: "active",
+          data_public: true,
+          terms_seen: true,
+          terms_agreed: DateTime.now,
+          pass_crypt: pass,
+          pass_crypt_confirmation: pass
+        })
       end
 
       if user

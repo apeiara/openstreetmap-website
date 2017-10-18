@@ -10,6 +10,13 @@ config = YAML.load_file(File.expand_path(env == "test" ? "../example.application
 
 ENV.each do |key, value|
   Object.const_set(Regexp.last_match(1).upcase, value) if key =~ /^OSM_(.*)$/
+
+  ["STAGING", "SPDL", "UK"].each do |account_code|
+    if ["ALM_#{account_code}_AUTH_ID",
+        "ALM_#{account_code}_AUTH_SECRET"].include?(key)
+      Object.const_set(key.upcase, value)
+    end
+  end
 end
 
 config[env].each do |key, value|

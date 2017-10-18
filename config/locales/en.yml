@@ -1762,6 +1762,9 @@ en:
         aol:
           title: Login with AOL
           alt: Login with an AOL OpenID
+        alm:
+          title: Login with ALM
+          alt: Login with a ALM Account
     logout:
       title: "Logout"
       heading: "Logout from OpenStreetMap"

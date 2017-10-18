@@ -1,5 +1,6 @@
 require "openid/fetchers"
 require "openid/util"
+require "omniauth-alm"
 
 CA_BUNDLES = ["/etc/ssl/certs/ca-certificates.crt", "/etc/pki/tls/cert.pem"].freeze
 
@@ -37,4 +38,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :windowslive, WINDOWSLIVE_AUTH_ID, WINDOWSLIVE_AUTH_SECRET, windowslive_options if defined?(WINDOWSLIVE_AUTH_ID)
   provider :github, GITHUB_AUTH_ID, GITHUB_AUTH_SECRET, github_options if defined?(GITHUB_AUTH_ID)
   provider :mediawiki, WIKIPEDIA_AUTH_ID, WIKIPEDIA_AUTH_SECRET, wikipedia_options if defined?(WIKIPEDIA_AUTH_ID)
+
+  provider :alm_spdl, ALM_SPDL_AUTH_ID, ALM_SPDL_AUTH_SECRET if defined?(ALM_SPDL_AUTH_ID)
+  provider :alm_staging, ALM_STAGING_AUTH_ID, ALM_STAGING_AUTH_SECRET if defined?(ALM_STAGING_AUTH_ID)
+  provider :alm_uk, ALM_UK_AUTH_ID, ALM_UK_AUTH_SECRET if defined?(ALM_UK_AUTH_ID)
 end
