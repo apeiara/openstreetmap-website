@@ -2,9 +2,7 @@ L.OSM = {};
 
 L.OSM.TileLayer = L.TileLayer.extend({
   options: {
-    url: document.location.protocol === 'https:' ?
-      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' :
-      'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    url: 'http://ats.apeiara.com/{z}/{x}/{y}.png',
     attribution: '© <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
   },
 
