@@ -105,6 +105,9 @@ gem "logstasher"
 # Pry for rails console
 gem "pry-rails"
 
+# Puma
+gem "puma"
+
 # Gems useful for development
 group :development do
   gem "listen"

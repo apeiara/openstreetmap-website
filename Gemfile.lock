@@ -232,6 +232,7 @@ GEM
       pry (>= 0.10.4)
     psych (2.2.4)
     public_suffix (3.0.0)
+    puma (3.10.0)
     r2 (0.2.7)
     rack (2.0.3)
     rack-cors (1.0.1)
@@ -396,6 +397,7 @@ DEPENDENCIES
   poltergeist
   pry-rails
   psych
+  puma
   r2 (~> 0.2.7)
   rack-cors
   rack-uri_sanitizer
